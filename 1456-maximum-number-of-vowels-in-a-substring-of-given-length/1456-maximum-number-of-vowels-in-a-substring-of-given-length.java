@@ -8,11 +8,10 @@ class Solution {
     //     return c;
     // }
     public int maxVowels(String s, int k) {
-        List<Character> list = new ArrayList<>();
+        //List<Character> list = new ArrayList<>();
         int numvow = 0;
         for(int i = 0 ; i < k ; i++){
             char val = s.charAt(i);
-            list.add(s.charAt(i));
             if(val == 'a'|| val == 'e' || val == 'i' || val == 'o' || val == 'u')
             numvow++;
         }
@@ -21,15 +20,15 @@ class Solution {
         int i = 0;
         int j = k;
         while(j < s.length()){
-            char rem = list.get(0);
+            char rem = s.charAt(i);
             if(rem == 'a'|| rem == 'e' || rem == 'i' || rem == 'o' || rem == 'u')
                 numvow --;
-            list.remove(0);
+            //list.remove(0);
             //System.out.print(i+" ");
             char val = s.charAt(j);
             if(val == 'a'|| val == 'e' || val == 'i' || val == 'o' || val == 'u')
                 numvow ++;
-            list.add(val);
+            //list.add(val);
             max = Math.max(max , numvow);
             i++;
             j++;
