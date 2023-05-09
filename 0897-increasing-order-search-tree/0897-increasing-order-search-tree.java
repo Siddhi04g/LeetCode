@@ -23,6 +23,8 @@ class Solution {
         inorder(root.right);
     }
     public TreeNode increasingBST(TreeNode root) {
+        if(root == null) return null;
+        
         inorder(root);
         TreeNode n = new TreeNode(list.get(0)); 
         TreeNode r = n;
