@@ -31,8 +31,8 @@ class Solution {
         if(root != null)
         str += root.val;
         
-        helper(root.left,str);
-        helper(root.right,str);
+        if(root.left != null)  helper(root.left,str);
+        if(root.right != null) helper(root.right,str);
         
     }
 }
