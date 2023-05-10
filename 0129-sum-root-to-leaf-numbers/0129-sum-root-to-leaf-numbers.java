@@ -21,7 +21,7 @@ class Solution {
     int sum = 0;
     public void helper(TreeNode root, String str){
         //base case
-        if(root == null) return;
+        //if(root == null) return;
         if(root.left == null && root.right == null){
             str += root.val;
             sum += Integer.parseInt(str);  
