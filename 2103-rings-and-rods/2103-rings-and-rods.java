@@ -1,3 +1,4 @@
+//1 ms
 class Solution {
     public int countPoints(String rings) {
         HashMap<Character,HashSet<Character>> map = new HashMap<>();
@@ -21,5 +22,28 @@ class Solution {
             if(s.size() == 3) count ++;
         }
         return count;
+    }
+}
+
+//0 ms 
+class Solution1 {
+    public int countPoints(String rings) {
+		int ret = 0;
+        boolean[][] rods = new boolean[10][3];
+        for (int i = 0; i < rings.length(); i += 2) {
+			if (rings.charAt(i) == 'R') {
+				rods[rings.charAt(i + 1) - '0'][0] = true;
+			} else if (rings.charAt(i) == 'G') {
+				rods[rings.charAt(i + 1) - '0'][1] = true;
+			} else {
+				rods[rings.charAt(i + 1) - '0'][2] = true;
+			}
+		}
+        
+        for (int i = 0; i < 10; i++) {
+			if (rods[i][0] && rods[i][1] && rods[i][2]) ret++;
+		}
+        
+        return ret;
     }
 }
