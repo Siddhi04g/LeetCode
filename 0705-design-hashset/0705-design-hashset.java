@@ -1,20 +1,20 @@
 class MyHashSet {
-    HashMap<Integer,Boolean> map;
+    ArrayList<Integer> list;
     public MyHashSet() {
-        map=new HashMap<>();
+        list = new ArrayList<>();
     }
     
     public void add(int key) {
-        if(!map.containsKey(key))
-        map.put(key,true);
+        if(!list.contains(key))
+        list.add(key);
     }
     
     public void remove(int key) {
-        map.remove(key);
+        list.remove(Integer.valueOf(key));
     }
     
     public boolean contains(int key) {
-        if(map.containsKey(key))
+        if(list.contains(key))
         return true;
         return false;
     }
